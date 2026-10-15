@@ -106,16 +106,27 @@ img { display: block; max-width: 100%; }
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; }
 
-.logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-.logo__mark {
-  width: 44px; height: 44px; border-radius: 12px;
-  background: var(--brand); color: #fff;
-  display: grid; place-items: center;
-  font-family: var(--font-head); font-weight: 900; font-size: 1.1rem;
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; max-width: min(260px, 50%); overflow: hidden; }
+/* El logo mide lo mismo que la barra de navegación (fila interna = 40px) */
+.logo__image {
+  display: block;
+  height: 40px;
+  width: auto;
+  aspect-ratio: 677 / 617;
+  object-fit: contain;
+  border-radius: 6px;
   box-shadow: var(--shadow);
+  flex: 0 0 auto;
 }
-.logo__text { display: flex; flex-direction: column; font-family: var(--font-head); font-weight: 700; color: #fff; line-height: 1.05; }
-.logo__text small { font-family: var(--font-body); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-soft); }
+/* Pie de página: badge redondo (56px) para que combine con el encabezado */
+.logo--footer .logo__image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+}
+.logo__text { display: flex; flex-direction: column; font-family: var(--font-head); font-weight: 700; color: #fff; line-height: 1.02; font-size: 0.9rem; white-space: nowrap; }
+.logo__text small { font-family: var(--font-body); font-weight: 400; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-soft); }
 .header.scrolled .logo__text { color: var(--brand-dark); }
 .header.scrolled .logo__text small { color: var(--brand); }
 
