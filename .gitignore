@@ -1,2 +1,11 @@
 bin/
 obj/
+node_modules/
+dist/
+.next/
+.cache/
+coverage/
+*.log
+*.tmp
+.DS_Store
+la-tirolesa (2)/
