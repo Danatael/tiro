@@ -41,14 +41,14 @@ function sendFile(filePath, res) {
       res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
       res.end("404 Not Found");
       return;
-    }
-
-    const ext = path.extname(filePath).toLowerCase();
+    }    const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || "application/octet-stream";
-
+    // HTML, CSS y JS siempre se revalidan: así los cambios de estilo se ven
+    // al instante y no se sirve una hoja de estilos obsoleta desde la caché.
+    const mustRevalidate = [".html", ".css", ".js"].includes(ext);
     res.writeHead(200, {
       "Content-Type": contentType,
-      "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=86400"
+      "Cache-Control": mustRevalidate ? "no-cache" : "public, max-age=86400"
     });
 
     const stream = fs.createReadStream(filePath);
