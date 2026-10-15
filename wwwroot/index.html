@@ -1,105 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>La Tirolesa | Restaurante en la presa El Estudiante, Huayapan</title>
-  <meta name="description" content="Restaurante La Tirolesa, frente a la presa El Estudiante, camino a Huayapan, Oaxaca. Comida, vista al agua y eventos.">
-  <meta name="theme-color" content="#3d86c6">
-  <link rel="stylesheet" href="/css/site.css">
-  <script src="/js/site.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Tirolesa · Cocina Oaxaqueña en la Presa El Estudiante</title>
+  <meta name="description" content="La Tirolesa · Mojarras frescas, comida típica oaxaqueña y mezcal por litro a la orilla de la Presa El Estudiante, San Andrés Huayápam, Oaxaca." />
+  <meta name="theme-color" content="#3a1512" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="#inicio">La Tirolesa</a>
-      <nav aria-label="Principal">
-        <a href="#nosotros">Nosotros</a><a href="#galeria">Galería</a><a href="#eventos">Eventos</a><a href="#ubicacion">Ubicación</a><a href="#contacto">Contacto</a>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__mark">LT</span>
+        <span class="logo__text">La Tirolesa<small>Cocina Oaxaqueña</small></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#nosotros" class="nav__link">Nosotros</a>
+        <a href="#menu" class="nav__link">Menú</a>
+        <a href="#ubicacion" class="nav__link">Ubicación</a>
+        <a href="#galeria" class="nav__link">Galería</a>
+        <a href="#contacto" class="nav__link nav__link--cta">Reservar</a>
       </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="inicio" aria-label="Inicio">
-      <div class="hills"></div><div class="mist"></div>
-      <div class="cable" aria-hidden="true"><div class="rider"></div></div>
-      <div class="wrap">
-        <h1>Come frente a la presa</h1>
-        <p>Restaurante La Tirolesa, en la presa El Estudiante, camino a Huayapan.</p>
-        <div class="acts">
-          <a class="btn" href="#ubicacion">Cómo llegar</a>
-          <a class="btn alt" href="#eventos">Ver eventos</a>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image:url('images/hero-oaxaca.png')"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow reveal">A la orilla de la Presa El Estudiante</p>
+      <h1 class="hero__title reveal">Mojarras y sabor<br /><span>oaxaqueño</span></h1>
+      <p class="hero__text reveal">Mojarras fresquecitas, comida típica de la región y mezcal artesanal por litro, en un paraje natural en San Andrés Huayápam. Bienvenido a <strong>La Tirolesa</strong>.</p>
+      <div class="hero__actions reveal">
+        <a href="#menu" class="btn btn--primary">Ver el menú</a>
+        <a href="#ubicacion" class="btn btn--ghost">Cómo llegar</a>
+      </div>
+    </div>
+    <a href="#nosotros" class="hero__scroll" aria-label="Bajar">▾</a>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="about section" id="nosotros">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <img src="images/interior.png" alt="Interior cálido del restaurante La Tirolesa con papel picado y barro" loading="lazy" />
+        <div class="about__badge">
+          <strong>+20</strong>
+          <span>años de tradición</span>
         </div>
       </div>
-    </section>
-
-    <section id="nosotros">
-      <div class="wrap cols">
-        <div>
-          <h2>Un lugar para quedarte un rato</h2>
-          <p>La Tirolesa está a la orilla de la presa El Estudiante. Aquí se come con calma, con aire fresco y vista al agua, a pocos minutos de la ciudad de Oaxaca.</p>
-          <p class="spaced">Viene en familia, con amigos o para celebrar. Nosotros ponemos la mesa y la comida.</p>
-        </div>
-        <dl>
-          <div><dt>Dónde</dt><dd>Presa El Estudiante, camino a Huayapan, Oaxaca</dd></div>
-          <div><dt>Horario</dt><dd>Todos los días, de 9:00 a 18:00 h</dd></div>
-          <div><dt>Ambiente</dt><dd>Aire libre, vista a la presa, estacionamiento</dd></div>
-        </dl>
+      <div class="about__body reveal">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 class="section__title">Comida típica frente a la presa</h2>
+        <p>La Tirolesa es un comedor familiar a la orilla de la Presa El Estudiante, en San Andrés Huayápam. Aquí vienes a comer mojarras recién preparadas, antojitos y comida típica oaxaqueña con la vista del agua y la sierra.</p>
+        <p>Un lugar tranquilo para disfrutar en familia, con tortillas hechas a mano y mezcal artesanal que también vendemos por litro para que te lo lleves a casa.</p>
+        <ul class="about__list">
+          <li>Mojarras frescas al gusto</li>
+          <li>Comida típica de la región</li>
+          <li>Mezcal artesanal por litro</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="galeria" class="no-top-padding">
-      <div class="wrap">
-        <h2>Así se ve La Tirolesa</h2>
-        <div class="grid">
-          <figure class="shot"><img src="/img/1.jpg" alt="Vista de la presa desde el restaurante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>La presa desde la mesa</span></figure>
-          <figure class="shot"><img src="/img/2.jpg" alt="Platillo del restaurante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>De la cocina</span></figure>
-          <figure class="shot"><img src="/img/3.jpg" alt="Terraza del restaurante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>La terraza</span></figure>
-          <figure class="shot"><img src="/img/4.jpg" alt="Atardecer en la presa El Estudiante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>Atardecer en la presa</span></figure>
-          <figure class="shot"><img src="/img/5.jpg" alt="Mesas del restaurante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>Las mesas</span></figure>
-          <figure class="shot"><img src="/img/6.jpg" alt="Ambiente del restaurante" loading="lazy" decoding="async" fetchpriority="low" onerror="this.remove()"><span>El ambiente</span></figure>
-        </div>
+  <!-- ===== MENÚ ===== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Lo que servimos</p>
+        <h2 class="section__title">Nuestro menú</h2>
+        <p class="section__sub">Una selección de los sabores que nos hacen únicos.</p>
       </div>
-    </section>
-
-    <section id="eventos">
-      <div class="wrap">
-        <h2>Celebra con nosotros</h2>
-        <p>Hacemos tu evento a la orilla de la presa. Cuéntanos la fecha y cuántas personas serán, y te respondemos con opciones.</p>
-        <div class="cards">
-          <article class="card"><h3>Cumpleaños y fiestas</h3><p>Mesas largas, comida para todos y espacio para que los niños jueguen.</p></article>
-          <article class="card"><h3>Reuniones y comidas</h3><p>Para la familia, la oficina o la generación de la escuela.</p></article>
-          <article class="card"><h3>Bodas y aniversarios</h3><p>Una ceremonia o un brindis con el atardecer de fondo.</p></article>
-        </div>
-        <div class="next">
-          <strong>Próximos eventos</strong>
-          <span>Pronto publicaremos las fechas. Mientras tanto, escríbenos para apartar la tuya.</span>
-        </div>
-        <a class="btn" id="wa-evento" href="https://wa.me/529510000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20un%20evento%20en%20La%20Tirolesa" rel="noopener">Cotizar mi evento por WhatsApp</a>
+      <div class="menu__grid">
+        <article class="dish reveal">
+          <div class="dish__img"><img src="images/mojarra-frita.png" alt="Mojarra frita servida con arroz y tortillas" loading="lazy" /></div>
+          <div class="dish__body">
+            <div class="dish__head"><h3>Mojarra Frita</h3><span class="dish__price">$180</span></div>
+            <p>Mojarra fresca frita o al mojo de ajo, servida con arroz, ensalada y tortillas hechas a mano.</p>
+          </div>
+        </article>
+        <article class="dish reveal">
+          <div class="dish__img"><img src="images/tlayuda.png" alt="Tlayuda oaxaqueña con tasajo y quesillo" loading="lazy" /></div>
+          <div class="dish__body">
+            <div class="dish__head"><h3>Tlayuda de Tasajo</h3><span class="dish__price">$160</span></div>
+            <p>Tortilla gigante crujiente con asiento, frijol, quesillo, tasajo y aguacate.</p>
+          </div>
+        </article>
+        <article class="dish reveal">
+          <div class="dish__img"><img src="images/mezcal.png" alt="Mezcal artesanal por litro" loading="lazy" /></div>
+          <div class="dish__body">
+            <div class="dish__head"><h3>Mezcal por Litro</h3><span class="dish__price">$350</span></div>
+            <p>Mezcal espadín artesanal de la región, para consumir aquí o llevar a casa por litro.</p>
+          </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ubicacion">
-      <div class="wrap">
-        <h2>Cómo llegar</h2>
-        <p>Estamos en la presa El Estudiante, sobre el camino a Huayapan. Toca el mapa para verlo y abrir la ruta desde donde estés.</p>
-        <div class="map" id="mapa">
-          <button type="button" id="cargar-mapa">Ver mapa</button>
+  <!-- ===== UBICACIÓN ===== -->
+  <section class="location section" id="ubicacion">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Cómo llegar</p>
+        <h2 class="section__title">A la orilla de la presa</h2>
+        <p class="section__sub">Nos encuentras junto a la Presa El Estudiante, en San Andrés Huayápam, a pocos minutos de la ciudad de Oaxaca.</p>
+      </div>
+
+      <div class="location__grid">
+        <div class="location__map reveal">
+          <iframe
+            title="Mapa de La Tirolesa en la Presa El Estudiante, San Andrés Huayápam"
+            src="https://www.google.com/maps?q=Presa%20El%20Estudiante%2C%20San%20Andr%C3%A9s%20Huay%C3%A1pam%2C%20Oaxaca&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
         </div>
-        <a class="btn map-link" href="https://www.google.com/maps/search/?api=1&query=Presa+El+Estudiante+Huayapam+Oaxaca" target="_blank" rel="noopener">Abrir en Google Maps</a>
-      </div>
-    </section>
 
-    <section id="contacto">
-      <div class="wrap">
-        <h2>Llámanos o escríbenos</h2>
-        <p>Para reservar mesa, preguntar por el horario o cotizar un evento.</p>
-        <a class="tel" href="tel:+529510000000">951 000 0000</a>
-        <p><a class="btn" href="https://wa.me/529510000000" rel="noopener">Escribir por WhatsApp</a></p>
+        <aside class="location__info reveal">
+          <h3>Presa El Estudiante</h3>
+          <ul class="location__list">
+            <li>
+              <strong>Dirección</strong>
+              <span>Presa El Estudiante, San Andrés Huayápam, Oaxaca de Juárez, Oax.</span>
+            </li>
+            <li>
+              <strong>Horario</strong>
+              <span>Jueves a miércoles · 9:00 a.m. a 6:30 p.m. · Domingo 9:00 a.m. a 7:00 p.m.</span>
+            </li>
+            <li>
+              <strong>Cómo llegar</strong>
+              <span>A 15 min del centro de Oaxaca por la carretera a Huayápam, siguiendo las señales a la presa.</span>
+            </li>
+          </ul>
+          <a
+            class="btn btn--primary btn--block"
+            href="https://www.google.com/maps/search/?api=1&query=Presa+El+Estudiante+San+Andr%C3%A9s+Huay%C3%A1pam+Oaxaca"
+            target="_blank"
+            rel="noopener"
+          >Abrir en Google Maps</a>
+        </aside>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">© <span id="y"></span> La Tirolesa. Presa El Estudiante, camino a Huayapan, Oaxaca.</footer>
+  <!-- ===== GALERÍA ===== -->
+  <section class="gallery section" id="galeria">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Momentos</p>
+        <h2 class="section__title">Galería</h2>
+      </div>
+      <div class="gallery__grid">
+        <figure class="reveal"><img src="images/hero-oaxaca.png" alt="Mesa oaxaqueña servida" loading="lazy" /></figure>
+        <figure class="reveal"><img src="images/mojarra-frita.png" alt="Mojarra frita recién servida" loading="lazy" /></figure>
+        <figure class="reveal"><img src="images/interior.png" alt="Interior del restaurante" loading="lazy" /></figure>
+        <figure class="reveal"><img src="images/tlayuda.png" alt="Tlayuda recién hecha" loading="lazy" /></figure>
+        <figure class="reveal"><img src="images/mezcal.png" alt="Mezcal artesanal" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contact section" id="contacto">
+    <div class="container contact__grid">
+      <div class="contact__info reveal">
+        <p class="eyebrow">Visítanos</p>
+        <h2 class="section__title">Un espacio para disfrutar</h2>
+        <ul class="contact__list">
+          <li><strong>Dirección</strong>Presa El Estudiante, San Andrés Huayápam, Oaxaca</li>
+          <li><strong>Horario</strong>Lunes a Sabado · 9:00 a.m. a 6:30 p.m. · Domingo 9:00 a.m. a 7:00 p.m.</li>
+          <li><strong>Contacto</strong><a href="tel:+529511234567">+52 951 123 4567</a></li>
+        </ul>
+      </div>
+      <div class="contact__event-card reveal">
+        <p class="eyebrow">Eventos familiares</p>
+        <h3>Alquila nuestro espacio</h3>
+        <p>La Tirolesa también puede alquilarse para convivios y eventos familiares. Disfruta de la presa, la comida típica y un ambiente tranquilo para compartir.</p>
+        <a class="btn btn--primary btn--block" href="tel:+529511234567">Llamar para eventos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo logo--footer">
+        <span class="logo__mark">LT</span>
+        <span class="logo__text">La Tirolesa<small>Cocina Oaxaqueña</small></span>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> La Tirolesa · Hecho con maíz y corazón en Oaxaca.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">▴</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
