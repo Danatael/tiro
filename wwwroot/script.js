@@ -201,3 +201,84 @@ if (menuTrack) {
   jumpTo(N * getStep())
   updateDots()
 }
+// ===== Visor de imágenes de la galería =====
+const lightbox = document.getElementById("lightbox")
+
+if (lightbox) {
+  const galleryImgs = [...document.querySelectorAll(".gallery__grid img")]
+  const total = galleryImgs.length
+  const lbImg = document.getElementById("lbImg")
+  const lbCount = document.getElementById("lbCount")
+  const lbClose = document.getElementById("lbClose")
+  const lbPrev = document.getElementById("lbPrev")
+  const lbNext = document.getElementById("lbNext")
+  let current = 0
+  let lastFocus = null
+
+  const show = (i) => {
+    current = (i + total) % total
+    const img = galleryImgs[current]
+    lbImg.src = img.currentSrc || img.src
+    lbImg.alt = img.alt
+    lbCount.textContent = `${current + 1} / ${total}`
+    // precarga las vecinas para que el cambio sea instantáneo
+    ;[current - 1, current + 1].forEach((j) => {
+      new Image().src = galleryImgs[(j + total) % total].src
+    })
+  }
+
+  const openLightbox = (i) => {
+    lastFocus = document.activeElement
+    lightbox.hidden = false
+    document.body.style.overflow = "hidden"
+    show(i)
+    lbClose.focus()
+  }
+
+  const closeLightbox = () => {
+    lightbox.hidden = true
+    document.body.style.overflow = ""
+    lbImg.removeAttribute("src")
+    if (lastFocus) lastFocus.focus()
+  }
+
+  // abrir con clic o con Enter/Espacio
+  galleryImgs.forEach((img, i) => {
+    const fig = img.closest("figure")
+    fig.tabIndex = 0
+    fig.setAttribute("role", "button")
+    fig.setAttribute("aria-label", `Ampliar: ${img.alt}`)
+    fig.addEventListener("click", () => openLightbox(i))
+    fig.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        openLightbox(i)
+      }
+    })
+  })
+
+  lbClose.addEventListener("click", closeLightbox)
+  lbPrev.addEventListener("click", () => show(current - 1))
+  lbNext.addEventListener("click", () => show(current + 1))
+
+  // clic en el fondo oscuro cierra
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.tagName === "FIGURE") closeLightbox()
+  })
+
+  // teclado
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.hidden) return
+    if (e.key === "Escape") closeLightbox()
+    if (e.key === "ArrowRight") show(current + 1)
+    if (e.key === "ArrowLeft") show(current - 1)
+  })
+
+  // deslizar con el dedo en el celular
+  let startX = 0
+  lightbox.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX }, { passive: true })
+  lightbox.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - startX
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1))
+  }, { passive: true })
+}
