@@ -291,7 +291,7 @@ img { display: block; max-width: 100%; }
 .btn--ghost-dark { background: transparent; color: var(--brand); border-color: var(--brand); }
 .btn--ghost-dark:hover { background: var(--brand); color: #fff; transform: translateY(-3px); }
 .contact__list a.social {
-  color: #fff;
+  color: #965205;
   justify-self: start; /* evita que se estire dentro del li */
 }
 .contact__list a.social:hover { color: #fff; text-decoration: none; }
