@@ -290,6 +290,11 @@ img { display: block; max-width: 100%; }
 .contact__event-card .btn + .btn { margin-top: 0.8rem; }
 .btn--ghost-dark { background: transparent; color: var(--brand); border-color: var(--brand); }
 .btn--ghost-dark:hover { background: var(--brand); color: #fff; transform: translateY(-3px); }
+.contact__list a.social {
+  color: #fff;
+  justify-self: start; /* evita que se estire dentro del li */
+}
+.contact__list a.social:hover { color: #fff; text-decoration: none; }
 
 /* ===== FOOTER ===== */
 .footer { background: #24100d; color: rgba(255,255,255,0.75); padding: 2.5rem 0; }
