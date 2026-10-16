@@ -182,6 +182,65 @@ img { display: block; max-width: 100%; }
 .dish__price { color: var(--brand); font-weight: 600; white-space: nowrap; }
 .dish__body p { color: var(--ink-soft); font-size: 0.93rem; margin-top: 0.5rem; }
 
+/* ===== CARRUSEL DEL MENÚ ===== */
+.carousel { position: relative; }
+
+.carousel__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.25rem 1.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
+
+.carousel__track .dish {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  scroll-snap-align: start;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--brand);
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+.carousel__btn:hover { background: var(--brand-dark); transform: translateY(-50%) scale(1.08); }
+.carousel__btn:disabled { opacity: 0; pointer-events: none; }
+.carousel__btn--prev { left: -18px; }
+.carousel__btn--next { right: -18px; }
+
+.carousel__dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
+.carousel__dot {
+  width: 9px; height: 9px; border-radius: 999px;
+  border: 0; padding: 0; cursor: pointer;
+  background: var(--line);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+.carousel__dot.active { width: 26px; background: var(--brand); }
+
+@media (max-width: 860px) {
+  .carousel__track .dish { flex-basis: calc((100% - 1.5rem) / 2); }
+}
+@media (max-width: 560px) {
+  .carousel__track .dish { flex-basis: 82%; }
+  .carousel__btn { display: none; } /* en celular se desliza con el dedo */
+}
+
 /* ===== UBICACIÓN ===== */
 .location { background: var(--brand-dark); color: #fff; }
 .location .section__title { color: #fff; }
