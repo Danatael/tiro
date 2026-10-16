@@ -54,3 +54,26 @@ const observer = new IntersectionObserver(
 )
 revealEls.forEach((el) => observer.observe(el))
 
+// ===== Hero image deferred loading =====
+const heroBg = document.querySelector(".hero__bg")
+const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+const saveData = Boolean(connection && connection.saveData)
+const slowConnection = Boolean(connection && /2g/i.test(connection.effectiveType || ""))
+
+if (heroBg) {
+  const applyHero = () => {
+    const heroImage = heroBg.dataset.bg
+    if (heroImage) {
+      heroBg.style.backgroundImage = `url("${heroImage}")`
+    }
+  }
+
+  if (!saveData && !slowConnection) {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(applyHero, { timeout: 1200 })
+    } else {
+      window.addEventListener("load", () => setTimeout(applyHero, 350), { once: true })
+    }
+  }
+}
+

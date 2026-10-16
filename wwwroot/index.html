@@ -18,7 +18,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#inicio" class="logo">
-        <img class="logo__image" src="images/logo.png" alt="La Tirolesa" width="44" height="40" />
+        <img class="logo__image" src="images/logo.png" alt="La Tirolesa" width="44" height="40" decoding="async" fetchpriority="high" />
         <span class="logo__text">La Tirolesa<small>Cocina Oaxaqueña</small></span>
       </a>
 
@@ -39,7 +39,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
-    <div class="hero__bg" style="background-image:url('images/hero-oaxaca.png')"></div>
+    <div class="hero__bg" data-bg="images/hero-oaxaca.png" aria-hidden="true"></div>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <p class="hero__eyebrow reveal">Restaurant campestre La Tirolesa</p>
@@ -57,7 +57,7 @@
   <section class="about section" id="nosotros">
     <div class="container about__grid">
       <div class="about__media reveal">
-        <img src="images/interior.png" alt="Interior cálido del restaurante La Tirolesa con papel picado y barro" loading="lazy" />
+        <img src="images/interior.png" alt="Interior cálido del restaurante La Tirolesa con papel picado y barro" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" />
         <div class="about__badge">
           <strong>+20</strong>
           <span>años de tradición</span>
@@ -88,21 +88,21 @@
       </div>
       <div class="menu__grid">
         <article class="dish reveal">
-          <div class="dish__img"><img src="images/mojarra-frita.png" alt="Mojarra frita servida con arroz y tortillas" loading="lazy" /></div>
+          <div class="dish__img"><img src="images/mojarra-frita.png" alt="Mojarra frita servida con arroz y tortillas" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></div>
           <div class="dish__body">
             <div class="dish__head"><h3>Mojarra Frita</h3><span class="dish__price"></span></div>
             <p>Mojarra fresca frita o al mojo de ajo, servida con arroz, ensalada y tortillas hechas a mano.</p>
           </div>
         </article>
         <article class="dish reveal">
-          <div class="dish__img"><img src="images/tlayuda.png" alt="Tlayuda oaxaqueña con tasajo y quesillo" loading="lazy" /></div>
+          <div class="dish__img"><img src="images/tlayuda.png" alt="Tlayuda oaxaqueña con tasajo y quesillo" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></div>
           <div class="dish__body">
             <div class="dish__head"><h3>Tlayuda de Tasajo</h3><span class="dish__price"></span></div>
             <p>Tortilla gigante crujiente con asiento, frijol, quesillo, tasajo y aguacate.</p>
           </div>
         </article>
         <article class="dish reveal">
-          <div class="dish__img"><img src="images/mezcal.png" alt="Mezcal artesanal por litro" loading="lazy" /></div>
+          <div class="dish__img"><img src="images/mezcal.png" alt="Mezcal artesanal por litro" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></div>
           <div class="dish__body">
             <div class="dish__head"><h3>Mezcal por Litro</h3><span class="dish__price"></span></div>
             <p>Mezcal espadín artesanal de la región, para consumir aquí o llevar a casa por litro.</p>
@@ -127,6 +127,8 @@
             title="Mapa de La Tirolesa en la Presa El Estudiante, Tlalixtac de Cabrera, Oaxaca"
             src="https://www.google.com/maps?q=Presa%20El%20Estudiante%2C%20Tlalixtac%20de%20Cabrera%2C%20Oaxaca&output=embed"
             loading="lazy"
+            decoding="async"
+            fetchpriority="low"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
           ></iframe>
@@ -167,13 +169,13 @@
         <h2 class="section__title">Galería</h2>
       </div>
       <div class="gallery__grid">
-        <figure class="reveal"><img src="images/1.jpeg" alt="Foto 1 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/2.jpeg" alt="Foto 2 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/3.jpeg" alt="Foto 3 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/4.jpeg" alt="Foto 4 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/5.jpeg" alt="Foto 5 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/6.jpeg" alt="Foto 6 de La Tirolesa" loading="lazy" decoding="async" /></figure>
-        <figure class="reveal"><img src="images/7.jpeg" alt="Foto 7 de La Tirolesa" loading="lazy" decoding="async" /></figure>
+        <figure class="reveal"><img src="images/1.jpeg" alt="Foto 1 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/2.jpeg" alt="Foto 2 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/3.jpeg" alt="Foto 3 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/4.jpeg" alt="Foto 4 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/5.jpeg" alt="Foto 5 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/6.jpeg" alt="Foto 6 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
+        <figure class="reveal"><img src="images/7.jpeg" alt="Foto 7 de La Tirolesa" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900" /></figure>
       </div>
     </div>
   </section>
@@ -203,7 +205,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="logo logo--footer">
-        <img class="logo__image" src="images/logo.png" alt="La Tirolesa" width="56" height="56" />
+        <img class="logo__image" src="images/logo.png" alt="La Tirolesa" width="56" height="56" decoding="async" fetchpriority="low" />
         <span class="logo__text">La Tirolesa<small>Cocina Oaxaqueña</small></span>
       </div>
       <p class="footer__copy">© <span id="year"></span> La Tirolesa · Hecho con corazón en Oaxaca.</p>
